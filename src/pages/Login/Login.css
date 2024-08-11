@@ -1,0 +1,115 @@
+.login-page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    background-color: #EEEEEE;
+    /* Header :- 56px, Top and Bottom Padding:- 24px+24px, Header-Bottom-Border:2px */
+    min-height: calc(100vh - 106px);
+    gap: 24px;
+}
+
+.login-card {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 32px;
+    width: 424px;
+    background-color: white;
+    gap: 24px;
+    border-top: 4px solid #3AC7EC;
+    box-shadow: 0px 4px 6px #0000003D;
+}
+
+.login-card .title {
+    font-size: 24px;
+    color: #222222;
+    font-weight: 600;
+    text-align: center;
+}
+
+.login-card .text-field-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+}
+
+.login-card .remember-me-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.login-card .text-field-container .text-field{
+    outline: none;
+    border: none;
+    padding: 2px 0px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Quicksand', sans-serif;
+    border-bottom: 1px solid #999999;
+    color: #666666;
+}
+
+.login-card .text-field-container .text-field-icon {
+    position: absolute;
+    filter: invert(35%) sepia(65%) saturate(462%) hue-rotate(103deg) brightness(95%) contrast(90%);
+    right: 0;
+    top: 0;
+}
+
+.login-card .text-field-container .forgot-link{
+    font-size: 14px;
+    font-weight: 600;
+    color: #1F7A54;
+    text-transform: uppercase;
+    text-align: right;
+    text-decoration: none;
+}
+
+.login-card .text-field-container-margin {
+    margin-top: 8px;
+}
+
+.login-card .remember-me-container > input{
+    width: 18px;
+    height: 24px;
+    accent-color: #1F7A54;
+}
+
+.login-card .remember-me-container > label{
+    font-size: 16px;
+    color: #222222;
+    font-weight: 600;
+}
+
+.login-card .login-button {
+    margin-top: 8px;
+    align-self: center;
+    width: 216px;
+    height: 40px;
+}
+
+.login-card .create-new-account-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.create-new-account-container .create-new-account-text {
+    color: #222222;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.login-card .create-new-account-container .forgot-link{
+    font-size: 14px;
+    font-weight: 600;
+    color: #1F7A54;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+}

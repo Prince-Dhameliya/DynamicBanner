@@ -1,0 +1,50 @@
+.banner {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text readability */
+}
+
+.edit-banner-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.banner-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.banner-content h2 {
+    margin: 0 0 10px;
+}
+
+.banner-content p {
+    margin: 0 0 20px;
+}
+
+.banner-link {
+    color: #00aaff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.banner-link:hover {
+    text-decoration: underline;
+}

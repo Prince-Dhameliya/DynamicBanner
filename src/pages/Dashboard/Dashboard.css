@@ -1,0 +1,15 @@
+.banner {
+    background-color: #f8d7da;
+    padding: 20px;
+    text-align: center;
+}
+  
+.dashboard {
+    margin: 20px;
+}
+  
+.dashboard label {
+    display: block;
+    margin: 10px 0;
+}
+  

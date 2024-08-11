@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from 'react-router-dom';
+// import { ListingPage } from './pages/ListingPage.js'
+
+import './App.css'
+import { ProtectedRoute } from './components/ProtectedRoute.jsx';
+import { AuthProvider } from './hooks/useAuth.jsx';
+import { HomeLayout } from './components/HomeLayout.jsx';
+import { ProtectedLayout } from './components/ProtectedLayout.jsx';
+import { FourZeroFourPage } from './pages/404/FourZeroFourPage.jsx';
+import { Dashboard } from './pages/Dashboard/Dashboard.jsx';
+import { Login } from './pages/Login/Login.jsx';
+import { Registration } from './pages/Registration/Registration.jsx';
+import { Listing } from './pages/Listing/Listing.jsx';
+import { EditBanner } from './pages/EditBanner/EditBanner.jsx';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <AuthProvider>
+      <Routes>
+        <Route element={<HomeLayout />}>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Registration />} />
+        </Route>
+        <Route path='/' element={<ProtectedLayout />}>
+          <Route path="/" element={<Listing />} />
+          <Route path="/banner/:id" element={<EditBanner />} />
+        </Route>
+
+        <Route element={<ProtectedRoute/>}>
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Route>
+
+        <Route path="*" element={<FourZeroFourPage />} />
+      </Routes>
+    </AuthProvider>
+
+  )
 }
 
-export default App;
+export default App
