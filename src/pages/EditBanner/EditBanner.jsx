@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import dayjs from 'dayjs';
 import axios from '../../api/axios';
 import { TextField, Checkbox, FormControlLabel, Button, Box, Typography, Paper } from '@mui/material';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 export const EditBanner = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [bannerData, setBannerData] = useState({
     description: '',
     timer: 60,
@@ -69,6 +70,7 @@ export const EditBanner = () => {
         }
       })
       .catch(error => {
+        navigate('/not-found')
         console.error('Error fetching banner data:', error);
       });
   }, []);

@@ -30,6 +30,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
         </Route>
 
+        <Route path="/not-found" element={<FourZeroFourPage />} />
         <Route path="*" element={<FourZeroFourPage />} />
       </Routes>
     </AuthProvider>

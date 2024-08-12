@@ -6,6 +6,7 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useLocalStorage("user", null);
+  const [isAdmin, setIsAdmin] = useLocalStorage("isAdmin", false);
   const location = useLocation();
   const from = location.state?.from || "/";
   const navigate = useNavigate();
@@ -22,9 +23,14 @@ export const AuthProvider = ({ children }) => {
     navigate("/", { replace: true });
   };
 
+  const setIsAdminn = () => {
+    setIsAdmin(!isAdmin);
+  }
+
   const value = {
     user,
-    isAdmin: true,
+    isAdmin,
+    setIsAdminn,
     login,
     logout,
   };
